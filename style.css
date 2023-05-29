@@ -40,11 +40,8 @@ body {
     margin-top: 30px;
 } */
 
-html {
-     background-color:#092E20;
-}
  body {
-     background-color: #092E20;
+     background-color: #ac1616;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -74,10 +71,10 @@ html {
      margin:0px;
 }
  #card-table {
-     background-color:green;
+     background-color:#0b130b;
      height:400px;
      width:600px;
-     border:solid 6px brown;
+     border:solid 6px #c9ac1d;
      border-radius:8px;
      -webkit-border-radius:8px;
      -moz-border-radius:8px;
