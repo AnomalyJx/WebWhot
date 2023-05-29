@@ -1,6 +1,6 @@
 # Flux [nowhere near finished]
 
-Flux is a fast-paced card game where the objective is to be the first player to get rid of all your cards. This is a web version of the popular card game "Whot!".
+Flux is a fast-paced card game where the objective is to be the first player to get rid of all your cards. This is a web version of the popular card game "Whot!". Thanks to @einaregilsson for this cards.js: https://einaregilsson.github.io/cards.js/ 
 
 ## Gameplay
 
