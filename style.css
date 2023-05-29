@@ -4,11 +4,12 @@
 } 
 
  body {
-     background-color: #ac1616;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height: 100vh;
+  background-color: #ac1616;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .container {
@@ -17,12 +18,25 @@
     align-items: center;
 }
 
+@keyframes titleAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
  .title {
-     font-family: 'Lemon Milk', sans-serif;
-     font-size: 40px;
-     color: #fff;
-     text-transform: uppercase;
-     margin-top: 30px;
+  font-family: 'Lemon Milk', sans-serif;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 30px;
+  animation: titleAnimation 3s infinite;
 }
  img.preload {
      display:none;
