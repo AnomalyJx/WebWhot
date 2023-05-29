@@ -1,12 +1,12 @@
- @font-face {
+ /* @font-face {
     font-family: 'Lemon Milk';
     src: url('LEMONMILK-Bold.otf') format('truetype');
-}
+} */
 
-/* font-family: 'Lemon Milk', Arial, sans-serif; */
+/* font-family: 'Lemon Milk', Arial, sans-serif;
 
 body {
-    background-color: #222;
+    background-color: #092E20;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,11 +19,17 @@ body {
     align-items: center;
 }
 
-.game-desk {
-    background-color: #2ecc71;
-    width: 800px;
-    height: 500px;
-    border-radius: 10px;
+#card-table {
+	background-color:green;
+	height:400px;
+	width:600px;
+	border:solid 6px brown;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	-ms-border-radius:8px;
+	-o-border-radius:8px;
+	box-shadow:#111 1px 1px 2px;
 }
 
 .title {
@@ -32,18 +38,50 @@ body {
     color: #fff;
     text-transform: uppercase;
     margin-top: 30px;
+} */
+
+html {
+     background-color:#092E20;
+}
+ body {
+     background-color: #092E20;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
 }
 
-#deal-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#deal-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+ .title {
+     font-family: 'Lemon Milk', sans-serif;
+     font-size: 40px;
+     color: #fff;
+     text-transform: uppercase;
+     margin-top: 30px;
+}
+ img.preload {
+     display:none;
+}
+ h1 {
+     font-size:60px;
+     text-align:center;
+     padding:0px;
+     margin:0px;
+}
+ #card-table {
+     background-color:green;
+     height:400px;
+     width:600px;
+     border:solid 6px brown;
+     border-radius:8px;
+     -webkit-border-radius:8px;
+     -moz-border-radius:8px;
+     -ms-border-radius:8px;
+     -o-border-radius:8px;
+     box-shadow:#111 1px 1px 2px;
 }

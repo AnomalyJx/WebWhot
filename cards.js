@@ -1,4 +1,3 @@
-
 var cards = (function() {
   //The global options
   var opt = {
@@ -12,8 +11,6 @@ var cards = (function() {
     cardback: 'red',
     acesHigh: false,
     cardsUrl: 'img/cards.png',
-    blackJoker: false,
-    redJoker: false,
     type: STANDARD,
     loop: 1
   };
@@ -390,4 +387,131 @@ var cards = (function() {
 
 if (typeof module !== 'undefined') {
   module.exports = cards;
+}
+
+
+// Define the card deck
+var deck = [];
+for (var i = 1; i <= 54; i++) {
+  deck.push(i);
+}
+// Add Whot! cards to the deck
+deck.push("Whot!", "Whot!", "Whot!");
+
+// Shuffle the deck
+shuffle(deck);
+
+// Initialize player hands
+var player1Hand = [];
+var player2Hand = [];
+for (var i = 0; i < 7; i++) {
+  player1Hand.push(drawCard());
+  player2Hand.push(drawCard());
+}
+
+// Initialize the discard pile
+var discardPile = [];
+discardPile.push(drawCard());
+
+// Current player (0 for player 1, 1 for player 2)
+var currentPlayer = 0;
+
+// Function to draw a card from the deck
+function drawCard() {
+  return deck.pop();
+}
+
+// Function to shuffle the deck
+function shuffle(array) {
+  // ...
+  // Your implementation of the shuffle function here
+  // ...
+}
+
+// Function to check if a card can be played
+function canPlayCard(card) {
+  var topCard = discardPile[discardPile.length - 1];
+  if (typeof card === "number") {
+    return card === topCard || Math.floor(card / 10) === Math.floor(topCard / 10);
+  } else {
+    return card === "Whot!" || topCard === "Whot!";
+  }
+}
+
+// Function to initialize the game
+function initializeGame() {
+  // Create a deck of cards
+  var deck = new cards.Deck();
+  deck.addCards(cards.all);
+  deck.shuffle();
+
+  // Deal cards to players
+  var hand1 = new cards.Hand({
+    faceUp: true,
+    y: 450
+  });
+  var hand2 = new cards.Hand({
+    faceUp: true,
+    y: 50
+  });
+
+  deck.deal(7, [hand1, hand2]);
+
+  // Display the cards on the game desk
+  var cardDisplay = document.getElementById('card-display');
+  for (var i = 0; i < hand1.length; i++) {
+    cardDisplay.appendChild(hand1[i].el);
+  }
+  for (var j = 0; j < hand2.length; j++) {
+    cardDisplay.appendChild(hand2[j].el);
+  }
+}
+
+// Call the initializeGame function to start the game
+initializeGame();
+
+// Function to play a card from the player's hand
+function playCard(player, cardIndex) {
+  var hand;
+  if (player === 0) {
+    hand = player1Hand;
+  } else {
+    hand = player2Hand;
+  }
+
+  var card = hand.splice(cardIndex, 1)[0];
+  discardPile.push(card);
+
+  // Check if the player has won
+  if (hand.length === 0) {
+    declareWinner(player);
+  } else {
+    // Switch to the next player
+    currentPlayer = (currentPlayer + 1) % 2;
+  }
+}
+
+// Function to handle a player's turn
+function playTurn(player, cardIndex) {
+  var hand;
+  if (player === 0) {
+    hand = player1Hand;
+  } else {
+    hand = player2Hand;
+  }
+
+  var card = hand[cardIndex];
+  if (canPlayCard(card)) {
+    playCard(player, cardIndex);
+    // Continue with the game or take necessary actions based on the played card
+    // ...
+  } else {
+    // Player cannot play the selected card, take necessary actions (e.g., draw a card)
+    // ...
+  }
+}
+
+// Function to declare the winner
+function declareWinner(player) {
+  console.log("Player " + (player + 1) + " wins!");
 }
