@@ -8,8 +8,8 @@ var cards = (function() {
     },
     animationSpeed: 500,
     table: 'body',
-    cardback: 'red',
     acesHigh: false,
+    cardback: 'red',
     cardsUrl: 'img/cards.png',
     type: STANDARD,
     loop: 1

@@ -1,8 +1,20 @@
-// Execute the code on page load
-window.addEventListener('DOMContentLoaded', (event) => {
-  cards.init({table:'#card-table'});
-  deck = new cards.Deck();
+document.addEventListener('DOMContentLoaded', function() {
+  cards.init({ table: '#card-table' });
+  var deck = new cards.Deck(); // Create a new deck
   deck.addCards(cards.all);
-  deck.render({immediate:true});
+  deck.render({ immediate: true });
+
+
+  // Create hands
+  var upperhand = new cards.Hand({ faceUp: false, y: 50 });
+  var lowerhand = new cards.Hand({ faceUp: true, y: 350 });
+
+  // Handle the "Deal" button click event
+  var dealButton = document.getElementById("deal-button");
+  dealButton.addEventListener("click", function() {
+    deck.deal(10, [upperhand, lowerhand], 50);
+  });
+
+  
 });
 

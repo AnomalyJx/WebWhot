@@ -3,6 +3,11 @@
   src: url('LEMONMILK-Bold.otf') format('truetype');
 } 
 
+@font-face {
+  font-family: 'Dacherry';
+  src: url('Dacherry.otf') format('truetype');
+}
+
  body {
   background-color: #ac1616;
   display: flex;
@@ -60,3 +65,24 @@
      box-shadow:#111 1px 1px 2px;
 }
 
+#deal-button {
+  font-family: 'Dacherry', sans-serif;
+  font-size: 24px;
+  color: #fff;
+  background-color: #ac1616;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#deal-button:hover {
+  background-color: #881010;
+}
+
+#deabutton.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
