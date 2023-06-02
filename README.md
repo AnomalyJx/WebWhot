@@ -12,8 +12,8 @@ Whot! is a fast-paced card game where the objective is to be the first player to
 
 ## Features
 
-- Single-player offline mode against AI opponents.
-- Multiplayer mode with the option to host or join a game.
+- Single-player offline mode against AI opponents. [Not Done]
+- Multiplayer mode with the option to host or join a game. [Coming Soon]
 - Sound effects and background music.
 - Instructions and game options.
 
