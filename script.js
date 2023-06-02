@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Handle the "Deal" button click event
   var dealButton = document.getElementById("deal-button");
   dealButton.addEventListener("click", function() {
-    deck.deal(10, [upperhand, lowerhand], 50);
+    deck.deal(5, [upperhand, lowerhand], 50);
   });
 
   

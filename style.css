@@ -44,7 +44,7 @@
   animation: titleAnimation 3s infinite;
 }
  img.preload {
-     display:none;
+  display:none;
 }
  h1 {
      font-size:60px;
