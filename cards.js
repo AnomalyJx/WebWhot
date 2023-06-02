@@ -123,6 +123,7 @@ var cards = (function() {
       $(this.el).animate(props, speed || opt.animationSpeed, callback);
     },
 
+
     rotate: function(angle) {
       $(this.el)
         .css('-webkit-transform', 'rotate(' + angle + 'deg)')
