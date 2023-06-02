@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
   deck.addCards(cards.all);
   deck.render({ immediate: true });
 
-
   // Create hands
   var upperhand = new cards.Hand({ faceUp: false, y: 50 });
   var lowerhand = new cards.Hand({ faceUp: true, y: 350 });
@@ -12,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Handle the "Deal" button click event
   var dealButton = document.getElementById("deal-button");
   dealButton.addEventListener("click", function() {
-    deck.deal(5, [upperhand, lowerhand], 50);
+    deck.deal(6, [upperhand, lowerhand], 50);
+
+    // Disable the "Deal" button
+    dealButton.disabled = true;
   });
-
-  
 });
-
