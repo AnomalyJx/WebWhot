@@ -12,14 +12,25 @@
 //   // Handle the "Deal" button click event
 //   var dealButton = document.getElementById("deal-button");
 //   dealButton.addEventListener("click", function() {
-//     deck.deal(6, [player1Hand, player3Hand, player2Hand], 200);
+//     deck.deal(6, [player1Hand, player2Hand], 200);
 
 //     // Disable the "Deal" button
 //     dealButton.disabled = true;
 //     dealButton.classList.add("disabled");
+
+//     // Move the deck and create a discard pile
+//     deck.x -= 50;
+//     deck.render();
+//     discardPile = new cards.Deck({ faceUp: true });
+//     discardPile.x += 50;
+//     deck.render({
+//       callback: function() {
+//         discardPile.addCard(deck.topCard());
+//         discardPile.render();
+//       },
+//     });
 //   });
 // });
-
 
 document.addEventListener('DOMContentLoaded', function() {
   cards.init({ table: '#card-table' });
@@ -35,13 +46,25 @@ document.addEventListener('DOMContentLoaded', function() {
   // Handle the "Deal" button click event
   var dealButton = document.getElementById("deal-button");
   dealButton.addEventListener("click", function() {
-    deck.deal(6, [player1Hand, player3Hand, player2Hand], 200);
-
-    // Add rotate class to player3Hand
-    player3Hand.el.classList.add("rotate");
+    deck.deal(6, [player1Hand, player2Hand], 200);
 
     // Disable the "Deal" button
     dealButton.disabled = true;
     dealButton.classList.add("disabled");
+
+    // Delay creating the discard pile
+    setTimeout(function() {
+      // Move the deck and create a discard pile
+      deck.x -= 50;
+      deck.render();
+      discardPile = new cards.Deck({ faceUp: true });
+      discardPile.x += 50;
+      deck.render({
+        callback: function() {
+          discardPile.addCard(deck.topCard());
+          discardPile.render();
+        },
+      });
+    }, 3000); // Adjust the delay time (in milliseconds) as needed
   });
 });

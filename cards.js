@@ -343,7 +343,7 @@ var cards = (function() {
         this[i].targetTop = top;
         this[i].targetLeft = left + i * opt.cardSize.padding;
       }
-    },
+    }, 
 
     toString: function() {
       return 'Hand';

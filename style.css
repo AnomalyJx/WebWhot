@@ -27,7 +27,6 @@
   font-family: 'Lemon Milk', sans-serif;
   font-size: 60px;
   color: #fff;
-  text-transform: uppercase;
   margin: 20px auto;
   text-align: center;
   position: fixed;
@@ -97,10 +96,20 @@
   cursor: not-allowed;
 }
 
-.player3Hand.rotate {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
+.left {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
+
+.right {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+
